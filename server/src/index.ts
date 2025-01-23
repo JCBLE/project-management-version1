@@ -2,7 +2,7 @@
  * @Author: Mecil Meng
  * @Date: 2025-01-19 23:04:52
  * @LastEditors: Mecil Meng
- * @LastEditTime: 2025-01-23 14:41:51
+ * @LastEditTime: 2025-01-23 16:29:36
  * @FilePath: /project_manager_system/server/src/index.ts
  * @Description:
  *
@@ -44,7 +44,7 @@ app.use("/users", userRoutes);
 app.use("/teams", teamRoutes);
 
 // Server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const port = Number(process.env.PORT) || 3000;
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
